@@ -21,3 +21,6 @@ select, text area {
 input {
     width: 250px;
 }
+error{
+    margin:auto;
+}

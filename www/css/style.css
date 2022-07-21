@@ -23,4 +23,6 @@ input {
 }
 error{
     margin:auto;
+    color: yellow;
+    width: 250px;;
 }

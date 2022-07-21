@@ -7,7 +7,7 @@ form {
 }
 
 input,
-select {
+select, text area {
     display: block;
     margin: auto;
 }

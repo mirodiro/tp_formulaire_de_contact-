@@ -1,3 +1,22 @@
+<?php 
+  
+    define("IS_DEBUG", $_SERVER["HTTP_HOST"] == "localhost" ? true :false);
+    $firstname =$lastname = $subject = $email= $message ="";
+
+//   var_dump($SERVER)
+  if($_SERVER["REQUEST_METHOD"]  == "POST"){
+    $firstname = $POST["firstname"];
+    $lastname = $POST["lastname"];
+    $subject = $POST["subjec"];
+    $email = $POST["email"];
+    $message = $POST["masssage"];
+
+  }else{
+    if(IS_DEBUG){
+    echo"pas post";
+  }
+}
+?>
 <!doctype html>
 <html lang="fr">
 
@@ -10,9 +29,12 @@
 
 <body>
     <div id="formulaire">
-        <form>
-            <input type="email" placeholder="exmemple@email.com" required>
-            <input type="text" placeholder="nom" required>
+        <form method="post" action="<?php $_SERVER["PHP_SELF"]      ?>">
+            <input type="email" placeholder="Prenom"name="firstname" required>
+            <input type="text" placeholder="nom"name="lastname" required>
+            <input type="text" placeholder="Sujet"name="subject" required>
+            <input type="text" placeholder="exmemple@email.com" name="email"required>
+            <textarea cols="30" rows="10" name="message" required></textarea>
             <input type="password" placeholder="mot de passe" required>
             <div id="select"> 
             <select name="date">
